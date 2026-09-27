@@ -12,7 +12,7 @@ window.__INVITE__ = {
     calendarMonthText: "تشرين الأول 2026",
     calendarWeekdayText: "السبت",
     calendarDayText: "24",
-    publicUrl: "",
+    publicUrl: "https://mohamad-adib-tawil.github.io/wedding-temp-wisal/",
     durationHours: 4,
     heroSub: "يتشرّفان بدعوتكم لمشاركتهما فرحة العمر",
     verse: "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً",
@@ -50,3 +50,23 @@ window.__INVITE__ = {
     }
   }
 };
+
+(function applyInvitationAssets() {
+  const config = window.__INVITE__.config;
+  const assets = config.assets;
+  document.documentElement.style.setProperty("--poster-image", `url("${assets.poster}")`);
+  document.documentElement.style.setProperty("--hero-image", `url("${assets.hero}")`);
+  const video = document.getElementById("entVideo");
+  if (video) {
+    video.poster = assets.poster;
+    video.src = assets.entranceVideo;
+  }
+  const icon = document.querySelector('link[rel="icon"]');
+  if (icon) icon.href = assets.favicon;
+  const image = document.querySelector('meta[property="og:image"]');
+  if (image) image.content = new URL(assets.share, config.publicUrl).href;
+  const twitterImage = document.querySelector('meta[name="twitter:image"]');
+  if (twitterImage) twitterImage.content = new URL(assets.share, config.publicUrl).href;
+  const canonical = document.querySelector('meta[property="og:url"]');
+  if (canonical) canonical.content = config.publicUrl;
+})();
