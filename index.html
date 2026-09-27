@@ -496,7 +496,7 @@
     var cfg=(window.__INVITE__&&window.__INVITE__.config)||{};
     var STORY={"kicker":"حفل زفاف","primary":cfg.groom+" & "+cfg.bride,"dateText":cfg.dateText};
     /* الكردية: خطوط القوالب الزخرفية لا تغطي حروفها — الكانفس يرسم بڤازیرماتن */
-    var ST={orn:"✦",accent:"#b0813c",font:"\"Aref Ruqaa\"",body:"Tajawal",honored:"بكل حبٍّ وسرور",attend:"نتشرّف بتلبية الدعوة لحضور",promise:"إن شاء الله حاضرون 🤍",brand:"صُنع من خلال منصة هلاهيل"};
+    var ST={orn:"✦",accent:"#b0813c",font:"\"Aref Ruqaa\"",body:"Tajawal",honored:"بكل حبٍّ وسرور",attend:"نتشرّف بتلبية الدعوة لحضور",promise:"إن شاء الله حاضرون 🤍",brand:""};
     /* نصوص بطاقة الستوري مجموعةً بمكان واحد: القوالب التي تختار لغة الضيف
        بنفسها (بوابة لغة داخل القالب) تبدّلها بضبط window.__da3waStoryText
        بمفاتيح honored/attend/kicker/primary/dateText/promise/brand/font/body.
@@ -689,12 +689,12 @@
           var url=URL.createObjectURL(blob);
           im.src=url;
           function download(){
-            var a=document.createElement('a'); a.href=url; a.download='hadhirun-halaheel.png';
+            var a=document.createElement('a'); a.href=url; a.download='wedding-attendance.png';
             document.body.appendChild(a); a.click(); a.remove();
           }
           dl.addEventListener('click',download);
           sh.addEventListener('click',function(){
-            var f=new File([blob],'hadhirun-halaheel.png',{type:'image/png'});
+            var f=new File([blob],'wedding-attendance.png',{type:'image/png'});
             if(navigator.canShare && navigator.canShare({files:[f]})){
               navigator.share({files:[f]}).catch(function(){});
             } else download();
@@ -747,9 +747,9 @@
             canvas.toBlob(function(blob){
               btn.disabled=false; btn.textContent="✓ انحفظت بصورك";
               if(!blob){ btn.textContent=orig; return; }
-              var f=new File([blob],'entry-pass-halaheel.png',{type:'image/png'});
+              var f=new File([blob],'wedding-entry-pass.png',{type:'image/png'});
               if(navigator.canShare && navigator.canShare({files:[f]})){ navigator.share({files:[f]}).catch(function(){}); }
-              else { var u=URL.createObjectURL(blob); var a=document.createElement('a'); a.href=u; a.download='entry-pass-halaheel.png'; document.body.appendChild(a); a.click(); a.remove(); }
+              else { var u=URL.createObjectURL(blob); var a=document.createElement('a'); a.href=u; a.download='wedding-entry-pass.png'; document.body.appendChild(a); a.click(); a.remove(); }
             },'image/png');
           });
         };
@@ -998,7 +998,7 @@
   </style>
   <div class="dc-txt">للاستفسار عبر واتساب<small>راسلنا مباشرةً</small><small class="dc-note"></small></div>
   <a class="dc-order" href="https://wa.me/+963992688759" target="_blank" rel="noopener">اطلبه 🎉</a>
-  <a class="dc-wa" href="https://wa.me/+963992688759" target="_blank" rel="noopener" target="_blank" rel="noopener" aria-label="اطلب عبر واتساب">
+  <a class="dc-wa" href="https://wa.me/+963992688759" target="_blank" rel="noopener" aria-label="اطلب عبر واتساب">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" stroke="currentColor" stroke-width="1.8"></path><path d="M9 8.5c.4 2.8 3.7 6 6.4 6.4l.9-1.5-2-1.2-1 .7c-.9-.4-1.9-1.4-2.3-2.3l.7-1-1.2-2-1.5.9Z" fill="currentColor"></path></svg>
   </a>
   <button class="dc-x" type="button" aria-label="إغلاق" onclick="this.parentNode.remove()">×</button>
