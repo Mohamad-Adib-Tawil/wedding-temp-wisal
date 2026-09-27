@@ -69,4 +69,8 @@ window.__INVITE__ = {
   if (twitterImage) twitterImage.content = new URL(assets.share, config.publicUrl).href;
   const canonical = document.querySelector('meta[property="og:url"]');
   if (canonical) canonical.content = config.publicUrl;
+  const order = document.querySelector("#da3wa-democta .dc-order");
+  if (order) order.href = config.orderLink;
+  const whatsapp = document.querySelector("#da3wa-democta .dc-wa");
+  if (whatsapp) whatsapp.href = config.whatsappLink;
 })();
